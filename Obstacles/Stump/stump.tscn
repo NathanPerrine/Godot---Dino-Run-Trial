@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c65rj873k1fj2"]
+
+[node name="Stump" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
