@@ -193,9 +193,10 @@ script = ExtResource("1_0e0h1")
 [node name="DinoSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qs6k8")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.529455
+frame = 2
+frame_progress = 0.405245
 
 [node name="RunCol" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)

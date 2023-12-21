@@ -8,15 +8,18 @@ func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	
 	if is_on_floor():
-		$RunCol.disabled = false
-		if Input.is_action_pressed("ui_accept"):
-			velocity.y = JUMP_SPEED
-			$JumpSound.play()
-		elif Input.is_action_pressed("ui_down"):
-			$DinoSprite.play("duck")
-			$RunCol.disabled = true
+		if not get_parent().game_running:
+			$DinoSprite.play("idle")
 		else:
-			$DinoSprite.play("run")
+			$RunCol.disabled = false
+			if Input.is_action_pressed("ui_accept"):
+				velocity.y = JUMP_SPEED
+				$JumpSound.play()
+			elif Input.is_action_pressed("ui_down"):
+				$DinoSprite.play("duck")
+				$RunCol.disabled = true
+			else:
+				$DinoSprite.play("run")
 	else:
 		$DinoSprite.play("jump")
 	
