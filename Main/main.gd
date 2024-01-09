@@ -94,8 +94,8 @@ func _process(delta):
 		generate_obs()
 		
 		# Move dino + camera
-		$Dino.position.x += speed * delta
-		$Camera2D.position.x += speed * delta
+		$Dino.position.x += speed
+		$Camera2D.position.x += speed
 		
 		# Update score
 		score += speed
