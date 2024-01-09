@@ -94,8 +94,8 @@ func _process(delta):
 		generate_obs()
 		
 		# Move dino + camera
-		$Dino.position.x += speed
-		$Camera2D.position.x += speed
+		$Dino.position.x += speed * delta
+		$Camera2D.position.x += speed * delta
 		
 		# Update score
 		score += speed
@@ -119,9 +119,10 @@ func show_score():
 
 
 func check_high_score():
+	score = score / SCORE_MODIFIER
 	if score > high_score:
-		high_score = score / SCORE_MODIFIER
-		$HUD.get_node("HighScoreLabel").text = "HIGH SCORE: " + str(high_score)
+		high_score = score
+		update_high_score()
 
 
 func update_high_score():
